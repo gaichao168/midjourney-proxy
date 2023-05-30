@@ -1,11 +1,12 @@
 mj:
   discord:
-    guild-id: xxx
-    channel-id: xxx
-    user-token: xxx
+    guild-id: 1110574950819041323
+    channel-id: 1110574951636942890
+    user-token: OTg4ODM4NjY4NjE1NzA0NjM2.G5sf6D.vqJX-Y1bO2CVSixCpTX5SN2vlZSbHg1fEHHBkc
     user-wss: false
     user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
-    bot-token: xxx
+    bot-token: MTExMDU3MjM5NzU4NjgyMTE2MA.G0S1Ga.afnSQDpi7ney3X-kOwRzuds1gq_uFsO0fXbNoY
+    mj-bot-name: Midjourney Bot
   task-store:
     type: in_memory
     timeout: 30d
@@ -14,3 +15,6 @@ mj:
     timeout-minutes: 5
     core-size: 3
     queue-size: 10
+  proxy:
+    host: 127.0.0.1
+    port: 7890

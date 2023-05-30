@@ -1,6 +1,7 @@
 package com.github.novicezk.midjourney.controller;
 
 import cn.hutool.core.text.CharSequenceUtil;
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.github.novicezk.midjourney.ProxyProperties;
 import com.github.novicezk.midjourney.ReturnCode;
@@ -154,7 +155,12 @@ public class SubmitController {
 
 	private Task newTask(BaseSubmitDTO base) {
 		Task task = new Task();
-		task.setId(RandomUtil.randomNumbers(16));
+		//task.setId(RandomUtil.randomNumbers(16));
+		if(CharSequenceUtil.isBlank(base.getTaskId())){
+			task.setId(IdUtil.simpleUUID());
+		}else{
+			task.setId(base.getTaskId());
+		}
 		task.setSubmitTime(System.currentTimeMillis());
 		task.setState(base.getState());
 		task.setNotifyHook(CharSequenceUtil.isBlank(base.getNotifyHook()) ? this.properties.getNotifyHook() : base.getNotifyHook());

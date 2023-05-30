@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 @Slf4j
 @Component
 public class ImagineMessageHandler extends MessageHandler {
-	private static final String CONTENT_REGEX = "\\*\\*\\[(\\d+)\\] (.*?)\\*\\* - <@\\d+> \\((.*?)\\)";
+	private static final String CONTENT_REGEX = "\\*\\*\\[([a-z0-9]+)\\] (.*?)\\*\\* - <@\\d+> \\((.*?)\\)";
 
 	@Override
 	public void handle(MessageType messageType, DataObject message) {
